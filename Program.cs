@@ -52,7 +52,9 @@ const string TOLERANCE = "tolerance";
                 tolerance = toleranceValue;
             }
 
-            else { throw new ArgumentException(colorBands[i].Length == 3 ? "Invalid color code. Please use valid color codes." : "Invalid input format. Please use a hyphen (-) to separate color codes."); }
+            else { throw new ArgumentException(colorBands[i].Length == 3
+                    ? "Invalid color code. Please use valid color codes."
+                    : "Invalid input format. Please use a hyphen (-) to separate color codes."); }
         }
         catch (ArgumentException e) { Console.WriteLine(e.Message); return; }
     }
