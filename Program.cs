@@ -47,10 +47,7 @@ const string TOLERANCE = "tolerance";
             }
 
             else if (i == colorBands.Length - 1
-                    && TryGetFromColorBand(colorBands[i], TOLERANCE, out double toleranceValue))
-            {
-                tolerance = toleranceValue;
-            }
+                    && TryGetFromColorBand(colorBands[i], TOLERANCE, out tolerance)) {}
 
             else { throw new ArgumentException(colorBands[i].Length == 3
                     ? "Invalid color code. Please use valid color codes."
@@ -59,7 +56,7 @@ const string TOLERANCE = "tolerance";
         catch (ArgumentException e) { Console.WriteLine(e.Message); return; }
     }
 
-    Console.WriteLine($"Resistance: {Math.Round(resistance, 2).ToString("N2")} Ω");
+    Console.WriteLine($"Resistance: {resistance.ToString("N2")} Ω");
     Console.WriteLine($"Tolerance: ± {tolerance}%");
 }
 #endregion
